@@ -1,6 +1,6 @@
 # References for using Git:
 
-SourceTree (this provides an 'easier to use' grpahical user interface for working with Git if you want to avoid the command-line/terminal)
+SourceTree (this provides an 'easier to use' graphical user interface for working with Git if you want to avoid the command-line/terminal)
 * http://www.sourcetreeapp.com/
 
 Git Installation
