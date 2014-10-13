@@ -9,6 +9,12 @@ Git Installation
 Git Set-up
 * http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
 
+Git Basics (concepts behind how it works)
+* http://git-scm.com/book/en/Getting-Started-Git-Basics
+
+Resolving Merge Conflicts from the Command Line
+* https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/
+
 The Full Git Book (is like the Bible for Git)
 * https://github.s3.amazonaws.com/media/progit.en.pdf
 
