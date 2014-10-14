@@ -46,7 +46,7 @@ def processday(file):
 				daydict[classrooms[i]][row[0]] = True
 
 	return daydict
-parse()
+
 
 
 def getRoomList():
