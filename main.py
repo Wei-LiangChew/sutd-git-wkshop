@@ -1,6 +1,6 @@
 # Import libraries
 import sys
-from parser.py import *
+from parser import *
 
 MONDAY = "Monday"
 TUESDAY = "Tuesday"
@@ -9,44 +9,23 @@ THURSDAY = "Thursday"
 FRIDAY = "Friday"
 DAYS = [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY]
 
-# our main function
-if __name__=="__main__":
-    # parse our arguments
-
-    if len(sys.argv) < 3:
-        print "Error: No of arguments supplied", len(sys.argv) - 1
-        print "Expected: day, time"
-    else:
-        day = sys.argv[1]
-        time = sys.argv[2]
-
-        rooms_available = get_available_rooms(day, time)
-
-        print "Rooms Available:"
-        for room in rooms_available:
-            print "\t%s" % room
-        if len(rooms_available) == 0:
-            print "None"
-    # all done
-
-
-def get_available_rooms(day, time, data):
+def get_available_rooms(day, time):
     if day not in DAYS:
         return "Error: invalid day: %s" % day
     if validate_time(time) == False:
         return "Error: invalid time: %s" % time
 
-        data = parse()
-        rooms = getRoomList()
+    data = parse()
+    rooms = getRoomList()
 
     available_rooms = []
 
 
-    query_time = get_query_time()
+    query_time = get_query_time(time)
 
     for room in rooms:
         if data[day][room][query_time] == True:
-            available_rooms.append()
+            available_rooms.append(room)
 
     return available_rooms
 
@@ -98,3 +77,24 @@ def get_query_time(time):
 
     return "%s:%s" % (query_hour, query_minute)
 
+
+
+# our main function
+if __name__=="__main__":
+    # parse our arguments
+
+    if len(sys.argv) < 3:
+        print "Error: No of arguments supplied", len(sys.argv) - 1
+        print "Expected: day, time"
+    else:
+        day = sys.argv[1]
+        time = sys.argv[2]
+
+        rooms_available = get_available_rooms(day, time)
+
+        print "Rooms Available:"
+        for room in rooms_available:
+            print "\t%s" % room
+        if len(rooms_available) == 0:
+            print "None"
+    # all done
