@@ -1,6 +1,6 @@
 # Import libraries
 import sys
-# from parser.py import *
+from parser.py import *
 
 MONDAY = "Monday"
 TUESDAY = "Tuesday"
@@ -22,7 +22,11 @@ if __name__=="__main__":
 
         rooms_available = get_available_rooms(day, time)
 
-        print rooms_available
+        print "Rooms Available:"
+        for room in rooms_available:
+            print "\t%s" % room
+        if len(rooms_available) == 0:
+            print "None"
     # all done
 
 
@@ -33,15 +37,18 @@ def get_available_rooms(day, time, data):
         return "Error: invalid time: %s" % time
 
         data = parse()
-        rooms = get_room_list()
+        rooms = getRoomList()
 
     available_rooms = []
 
 
-    query_time = get_query_time
-    for room in data[day]:
-        if room[query_time] == True:
+    query_time = get_query_time()
+
+    for room in rooms:
+        if data[day][room][query_time] == True:
             available_rooms.append()
+
+    return available_rooms
 
 
 def validate_time(time):
